@@ -1,0 +1,19 @@
+import A5Baryon.Auxiliary
+import A5Baryon.ConjugacyClassGalois
+import A5Baryon.OutA5Necessity
+import A5Baryon.SolvabilityBelow60
+
+import A5Baryon.TopologyFiniteConnected
+import A5Baryon.Section3_ContinuumNoGo
+import A5Baryon.Section3_ContinuumDefectNoGo
+import A5Baryon.Section7_LatticeGaugeAction  -- §4 (格子ゲージ)
+import A5Baryon.Section7_HeatBathDynamics
+
+import A5Baryon.Baryon_S1_Introduction
+import A5Baryon.Baryon_S2_AlgebraicPrep
+import A5Baryon.Baryon_S2_MinimalityA5
+import A5Baryon.Baryon_S3_GaloisRealization
+import A5Baryon.Baryon_S4_OutNecessity
+import A5Baryon.Baryon_S5_ConditionalConstruction
+import A5Baryon.Baryon_S6S7_RefutationAndLimitations
+import A5Baryon.Baryon_S8_Conclusion
