@@ -41,6 +41,7 @@
 \theoremstyle{thmstylethree}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{principle}[theorem]{Principle}
 \theoremstyle{thmstyletwo}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
@@ -85,11 +86,15 @@ of a smooth connection, forcing vanishing curvature. Any non-trivial
 finite holonomy must therefore be implemented through defect monodromy
 or a discrete (lattice) gauge structure.
 
-We adopt Working Hypothesis~F --- that the operational holonomy group
-is finite --- as an explicit input. Under this hypothesis, Klein's
-classification of finite $\SO(3)$ subgroups together with conditions
-(E1)--(E5) selects $A_5$ as the minimal admissible group; $A_5$ thus
-emerges from the discrete framework rather than being postulated.
+We adopt a Finite Readout Principle as the substantive physical
+input: a bounded protocol with finite observational resolution, finite
+spacetime support, and finite resources admits only finitely many
+operationally distinguishable readout states. Finite operational
+holonomy then follows immediately. Under this operational input,
+Klein's classification of finite $\SO(3)$ subgroups together with
+conditions (E1)--(E5) selects $A_5$ as the minimal admissible group;
+$A_5$ thus emerges from the discrete framework rather than being
+postulated.
 
 As a conditional application, the $A_5$-based construction compresses
 the baryogenesis scale to three discrete orders of magnitude,
@@ -111,8 +116,6 @@ independently of the dilution exponent and normalization.
 \keywords{finite holonomy; alternating group $A_5$; baryon asymmetry; lattice gauge theory; defect monodromy; Sakharov conditions}
 
 \maketitle
-
-\tableofcontents
 
 %%============================================================
 \section{Introduction}
@@ -179,31 +182,66 @@ parameters; they arise from the fact that the group structure of $A_5$
 and icosahedral geometry share the same number field $\Qsqrt$
 (Section~2.6.4).
 
-\paragraph{Working Hypothesis~F (Finite Identifiability).}
-Throughout this paper we adopt the following as an explicit working
-input.
+\paragraph{Operational finite readout and effective holonomy.}
+Throughout this paper, the substantive physical input is formulated not
+as the direct postulation of a finite holonomy group, but as an
+operational finiteness principle concerning what a bounded protocol can
+distinguish.
 
-\begin{hypothesis}[Finite Identifiability, Hypothesis~F]
-\label{hyp:F}
-The operational holonomy group $\hop$ is finite:
+\begin{definition}[Operational readout state space]
+\label{def:readout-state-space}
+Fix an observational protocol $\mathcal P$ on a finite spacetime region
+with finite resources and finite observational resolution. Let
+$S_{\mathcal P}$ denote the set of operationally distinguishable
+readout states produced by $\mathcal P$.
+\end{definition}
+
+\begin{principle}[Finite Readout Principle]
+\label{prin:frp}
+For every physically realizable protocol $\mathcal P$ with finite
+observational resolution, finite spacetime support, and finite
+resources, the operational readout state space $S_{\mathcal P}$ is
+finite.
+\end{principle}
+
+\begin{proposition}[Finite operational holonomy]
+\label{prop:finite-operational-holonomy}
+Let
 \[
-  \hop := \mathrm{Im}\!\bigl(\rho:\pi_1(\Gamma)\to\Sym(S)\bigr)
-  \quad \text{is finite.}
+H_{\mathrm{op}} := \operatorname{Im}\!\bigl(\rho:\pi_1(\Gamma)\to \mathrm{Sym}(S_{\mathcal P})\bigr).
 \]
-\end{hypothesis}
+If $S_{\mathcal P}$ is finite, then $H_{\mathrm{op}}$ is finite. In
+particular,
+\[
+|H_{\mathrm{op}}| \le |S_{\mathcal P}|!.
+\]
+\end{proposition}
 
-We explore the consequences of this finiteness hypothesis.
-An information-theoretic and operationally independent proof of
-Hypothesis~F is a future task (Open Problem~G14), but the operational
-motivation is that any measurement procedure with finite observational
-resolution can impose only a finite number of topological invariants on
-a cycle.
+\begin{proof}
+Since $S_{\mathcal P}$ is finite, its permutation group
+$\mathrm{Sym}(S_{\mathcal P})$ is finite. Hence every subgroup, and in
+particular the image $H_{\mathrm{op}}$, is finite.
+\end{proof}
 
-\paragraph{Supporting evidence: Planck length and Planck time.}
-Hypothesis~F is the \emph{input} of all theorems in this paper; the
-following is positioned not as a proof but as independent supporting
-evidence that the picture of infinite continuous resolution breaks
-down physically (Section~\ref{sec:nogo}).
+In what follows, the role previously played by Working Hypothesis~F is replaced by the Finite Readout Principle together with
+Proposition~\ref{prop:finite-operational-holonomy}. The point is not
+that the microscopic gauge structure of nature must itself be
+fundamentally finite, but that a bounded protocol can access only
+finitely many operationally distinguishable readout states. Under this
+weaker and operationally natural input, finite operational holonomy
+follows immediately.
+
+An information-theoretic and operational derivation of the Finite
+Readout Principle remains a future task (Open Problem~G14). The
+motivation, however, is already clear: any measurement procedure with
+finite observational resolution can impose only finitely many
+operationally distinguishable topological invariants on a cycle.
+
+\paragraph{Supporting evidence: Planck length, minimum length, and entropy bounds.}
+The following is positioned not as a proof of the Finite Readout
+Principle, but as independent physical evidence that the idealization of
+infinite continuous operational resolution is unlikely to be physically
+meaningful (Section~\ref{sec:nogo}).
 
 \begin{itemize}
   \item \textit{Planck length and Planck time.}
@@ -218,15 +256,15 @@ down physically (Section~\ref{sec:nogo}).
     regarded as the applicability limit of the current effective theory
     (QFT + classical gravity)~\cite{Planck1899}.
 
-  \item \textit{Minimum length thought experiment.}
+  \item \textit{Minimum-length thought experiment.}
     If the energy concentration needed to resolve a distance $\Delta x$
     pushes the Schwarzschild radius to a value comparable to $\Delta x$
     or larger, the region gravitationally collapses into a black hole.
     This is a common theme in many quantum-gravity approaches and
-    suggests that operationally verifying $\Delta x \lesssim \ell_{\mathrm{P}}$ is
-    difficult or impossible~\cite{Maggiore1994}. This is consistent with
-    the motivation for Hypothesis~F: finite observational resolution
-    implies a finite number of distinguishable states.
+    suggests that operationally verifying $\Delta x \lesssim
+    \ell_{\mathrm{P}}$ is difficult or impossible~\cite{Maggiore1994}.
+    This supports the idea that finite observational resolution implies
+    only finitely many distinguishable readout states.
 
   \item \textit{Entropy bound (finite degrees of freedom).}
     The Bekenstein bound
@@ -242,14 +280,19 @@ down physically (Section~\ref{sec:nogo}).
     suggests roughly a fixed number of degrees of freedom per Planck
     area~\cite{Hawking1975}. This holographic view, in which the degrees
     of freedom of a gravitating system are bounded by the area of its
-    boundary rather than its volume~\cite{tHooft1993,Susskind1995,Bousso2002}, is
-    linked to the finiteness motivation of Hypothesis~F.
+    boundary rather than its volume~\cite{tHooft1993,Susskind1995,Bousso2002},
+    supports the operational idea that a bounded protocol can access
+    only finitely many distinguishable readout states.
 \end{itemize}
 
 The above evidence supports the physical intuition of the logical chain
-(i) ``finite identifiability'' $\to$ (ii) ``smooth-local holonomy
-interpretation fails'' $\to$ (iii) ``defect monodromy or discretization
-(lattice),'' but it does not constitute a proof of Hypothesis~F.
+\[
+\text{finite readout} \;\Longrightarrow\; \text{finite operational holonomy}
+\;\Longrightarrow\; \text{smooth-local reading fails}
+\;\Longrightarrow\; \text{defect monodromy or discretization}.
+\]
+It does not, however, constitute a full proof of the Finite Readout
+Principle.
 
 \paragraph{Note on eliminating smooth-local readings.}
 In this paper, ``finite holonomy'' does not mean that the local
@@ -325,10 +368,13 @@ confusion during peer review.
     formal verification using Lean~4.
 
   \item[\tagP\ Physics (conditional).]
-    Working Hypothesis~F restricts the implementation of finite holonomy
-    to either ``defect monodromy'' or ``discretization (lattice)''
-    (Section~\ref{sec:nogo}). Claims in this layer depend on Hypothesis~F and on
-    bridge hypotheses (B2, B3, B5).
+    The physical layer depends first on the Finite Readout Principle,
+    from which finite operational holonomy follows immediately.
+    Combined with the no-go theorem, this restricts non-trivial
+    implementations of finiteness to either ``defect monodromy'' or
+    ``discretization (lattice)'' (Section~\ref{sec:nogo}). The
+    baryogenesis application then depends further on bridge hypotheses
+    (B2, B3, B5).
 
   \item[\tagE\ Experiment (comparison).]
     The numerical comparison and order-of-magnitude evaluation of $\etaB$
@@ -391,11 +437,13 @@ confusion during peer review.
     (badgeP) at ([xshift=10pt, yshift=-8pt] layerP.north west) {[P]};
   \node[font=\normalsize\bfseries, text=cP, anchor=west]
     at ([xshift=4pt] badgeP.east)
-    {Physics \textit{\small (Conditional --- depends on Hyp.\,F + B2, B3, B5)}};
+    {Physics \textit{\small (Conditional --- depends on Principle F + Prop. F.1 + B2, B3, B5)}};
   \node[figitem, anchor=north west]
     at ([xshift=12pt, yshift=-14pt] badgeP.south west)
-    {$\bullet$\ \textbf{Hyp.\,F}: operational holonomy group $\hop$ is finite
-       (Planck-scale motivation)\\[6pt]
+    {$\bullet$\ \textbf{Principle F}: finite readout state space $S_{\mathcal P}$
+       for any bounded finite-resolution protocol\\[6pt]
+     $\bullet$\ \textbf{Prop. F.1}: $S_{\mathcal P}$ finite
+       $\Rightarrow \hop$ finite\\[6pt]
      $\bullet$\ \textbf{B2} (definitional axiom):
        matter/antimatter $:=$ doublet $(C_5^+,\,C_5^-)$
        exchanged by $\Out(A_5)$\\[6pt]
@@ -424,7 +472,7 @@ confusion during peer review.
   %% ARROWS
   \draw[layerarrow] (layerM.south) -- (layerP.north)
     node[midway, right=8pt, font=\footnotesize\bfseries, text=cArrow]
-    {Hyp.\,F\;+\;No-go\;$\Rightarrow$\;discrete framework};
+    {Principle F + Prop.\ F.1 + No-go $\Rightarrow$ discrete framework};
   \draw[layerarrow] (layerP.south) -- (layerE.north)
     node[midway, right=8pt, font=\footnotesize\bfseries, text=cArrow]
     {B2\,+\,B3\,+\,B5\;$\Rightarrow$\;scale compression};
@@ -438,7 +486,7 @@ confusion during peer review.
     (statP) at ([xshift=0.55cm] layerP.north east |- layerP.north)
     {\textcolor{cP}{\textbf{Status}}\\[2pt]
      Conditional on\\
-     Hyp.\,F, B2, B3, B5\\
+     Principle F, Prop.\ F.1, B2, B3, B5\\
      Open: G1$'$, G14};
   \node[condbox={cE}, anchor=north west]
     (statE) at ([xshift=0.55cm] layerE.north east |- layerE.north)
@@ -456,7 +504,7 @@ confusion during peer review.
 \end{tikzpicture}
 \caption{Three-layer epistemological structure of the paper.
 Layer~\tagM\ contains unconditional mathematical results (Lean~4 verified).
-Layer~\tagP\ requires Hypothesis~F and bridge hypotheses B2, B3, B5.
+Layer~\tagP\ begins with the Finite Readout Principle; finite operational holonomy then follows as an immediate consequence, and the baryogenesis application further depends on bridge hypotheses B2, B3, B5.
 Layer~\tagE\ provides order-of-magnitude comparison with observation.}
 \label{fig:epistemology}
 \end{figure}
@@ -467,7 +515,8 @@ Layer~\tagE\ provides order-of-magnitude comparison with observation.}
 %%------------------------------------------------------------
 
 This section adopts one of the branches of discrete implementation that
-the no-go theorem leaves open under Working Hypothesis~F.  As a
+the no-go theorem leaves open under the Finite Readout Principle,
+equivalently under finite operational holonomy. As a
 \emph{conditional application example}, under consequences (A1*, A4*)
 and bridge hypotheses (B2, B3, B5), the algebraic structure of $A_5$
 restricts $\etaB$ to three discrete scales:
@@ -734,7 +783,7 @@ Condition & Physics requirement & Mathematical origin & Section \\
   $\mathrm{Out}(A_5)\cong\mathbb{Z}_2$ &
   \S\ref{sec:claim2}, Claim~2 \\
 (E5) Geometric realisation &
-  Working Hypothesis~F $\to$ finite $\SO(3)$ subgroup $\to$
+  Finite Readout Principle $\to$ finite operational holonomy $\to$ finite $\SO(3)$ subgroup $\to$
   Klein classification; $\Qsqrt$ agreement unifies geometry and
   representation theory &
   Icosahedral geometry &
@@ -851,10 +900,12 @@ the regular polyhedra.
 
 This number-field agreement is the algebraic root of the structure that
 simultaneously produces $\sqrt{5}$, $\varphi$, and the Fibonacci
-numbers. Within the discrete gauge structure imposed by Working
-Hypothesis~F, $A_5$ is selected, and the coincidence of geometry and
-representation theory at the level of the number field algebraically
-constrains the cosmological scale (as an application example).
+numbers. Within the discrete gauge structure selected once the Finite Readout
+Principle yields finite operational holonomy and the no-go theorem
+forces a discrete implementation, $A_5$ is selected, and the
+coincidence of geometry and representation theory at the level of the
+number field algebraically constrains the cosmological scale (as a
+conditional application example).
 
 \begin{figure}[t]
 \centering
@@ -1011,8 +1062,10 @@ connection has zero curvature.
 
 \begin{theorem}[Forced bifurcation, Theorem~3.2]
 \label{thm:bifurcation}
-Under Working Hypothesis~F, any non-trivial implementation of finite
-holonomy is restricted to one of:
+Under the Finite Readout Principle, equivalently under finite
+operational holonomy as given by
+Proposition~\ref{prop:finite-operational-holonomy}, any non-trivial
+implementation of finiteness is restricted to one of:
 \begin{enumerate}
   \item[(A)] Defect/monodromy: $\rho:\pi_1(M\setminus\Sigma)\to A_5$.
   \item[(B)] Discretisation (lattice gauge theory).
@@ -1028,7 +1081,7 @@ holonomy is restricted to one of:
   smallbox/.style={draw, rounded corners, align=center, minimum width=31mm, minimum height=8mm},
   every edge/.style={draw, ->, thick}
 ]
-  \node[box] (start) {Finite holonomy\\under Hypothesis~F};
+  \node[box] (start) {Finite operational holonomy\\under Principle F};
   \node[box, below=of start] (smooth) {Smooth-local reading:\\connected local holonomy};
   \node[box, below=of smooth] (trivial) {Finite + connected\\$\Longrightarrow$ trivial};
   \node[box, below=of trivial] (curv) {Ambrose--Singer\\$\Longrightarrow$ curvature $=0$};
@@ -1084,8 +1137,10 @@ four essential respects:
 \noindent\textit{Epistemological level:} [M] for Theorems~\ref{thm:cost-gap}--\ref{thm:flatness} (Lean~4 verified); [Model] for Section~\ref{ssec:heatbath}.
 \medskip
 
-This section develops the discrete implementation that Working Hypothesis~F forces after the no-go
-theorem rules out the smooth-local branch (Section~\ref{sec:nogo}).
+This section develops the discrete implementation forced once the
+smooth-local branch is ruled out and the operational input is taken to
+be finite readout, equivalently finite operational holonomy
+(Section~\ref{sec:nogo}).
 
 \subsection{Wilson lattice gauge action}
 \label{ssec:wilson}
@@ -1487,8 +1542,9 @@ $\Delta\chi$ of equation~\eqref{eq:deltachi}.
 
 \medskip\noindent
 This section takes up one of the discrete-implementation branches that
-the no-go theorem leaves open under Working Hypothesis~F, and shows
-that the algebraic structure of $A_5$ constrains the scale of $\etaB$.
+the no-go theorem leaves open under the Finite Readout Principle,
+equivalently under finite operational holonomy, and shows that the
+algebraic structure of $A_5$ constrains the scale of $\etaB$.
 A complete derivation of the dynamical mechanism is beyond the scope of
 this paper (Section~\ref{ssec:limitations}, Limitation~L1;
 Open Problem~G1').
@@ -2083,11 +2139,18 @@ Local prediction $R_X=\varphi^{-2}$ &
     breaking; unified derivation of $\varphi^{-48}$; quantitative
     evaluation of $m_+ - m_-$.
 
-  \item[G14 (Independent justification of Working Hypothesis~F).]
-    Information-theoretic or operational proof that finite information
-    capacity implies a finite operational holonomy group.  Clarification
-    of the relationship with the continuous gauge groups $\mathrm{SU}(2)$
-    and $\mathrm{SU}(3)$.
+  \item[G14 (Operational foundation of the Finite Readout Principle).]
+    Provide an information-theoretic and operational derivation of the
+    Finite Readout Principle, namely that finite information capacity in
+    a bounded protocol implies finiteness of the operational readout
+    state space $S_{\mathcal P}$, and hence finiteness of the induced
+    operational holonomy image
+    \[
+    \operatorname{Im}\!\bigl(\rho:\pi_1(\Gamma)\to \mathrm{Sym}(S_{\mathcal P})\bigr).
+    \]
+    Clarify how this effective finiteness coexists with continuous
+    microscopic gauge groups such as $\mathrm{SU}(2)$ and
+    $\mathrm{SU}(3)$.
 
   \item[G15 (Wider class of discrete groups).]
     Complete assessment of whether finite subgroups of $\mathrm{SU}(2)$
@@ -2108,14 +2171,21 @@ Accordingly, any non-trivial finite holonomy framework must be
 implemented through defect monodromy or through a discrete realization
 such as lattice gauge structure.
 
-Under Working Hypothesis~F, this obstruction result leaves a restricted
-finite discrete framework as the natural setting for further
-construction. Within that setting, and restricting to finite subgroups
-of $\SO(3)$ subject to conditions~(E1)--(E5), Klein's classification
-selects $A_5$ as the minimal admissible group in the present algebraic
-scheme. In this precise sense, $A_5$ is not postulated as an isolated
-physical dogma, but emerges as the smallest candidate compatible with
-the imposed structural requirements.
+The physical input used in this paper is best understood not as the
+direct postulation of a finite microscopic holonomy group, but as an
+operational finiteness principle: a bounded protocol with finite
+resolution and finite resources can access only finitely many
+operationally distinguishable readout states. From this, finite
+operational holonomy follows immediately. Combined with the obstruction
+theorem, this leaves a restricted finite discrete framework as the
+natural setting for further construction.
+
+Within that setting, and restricting to finite subgroups of $\SO(3)$
+subject to conditions~(E1)--(E5), Klein's classification selects $A_5$
+as the minimal admissible group in the present algebraic scheme. In
+this precise sense, $A_5$ is not postulated as an isolated physical
+dogma, but emerges as the smallest candidate compatible with the
+imposed structural requirements.
 
 The baryogenesis discussion should be read within this logical order.
 The present paper does not provide a complete first-principles
@@ -2139,13 +2209,13 @@ $F_{48}$ is therefore not an external numerical input, but an algebraic
 consequence of the common $\Qsqrt$ structure.
 
 What remains open is not the existence of a discrete scale constraint,
-but the full dynamical origin of the bridge hypotheses, the microscopic
+but the full operational foundation of the Finite Readout Principle,
+the dynamical origin of the bridge hypotheses, the microscopic
 mechanism selecting the final discrete prefactor $c$, and the explicit
 construction of a physically viable defect-monodromy or lattice model
-realizing the finite holonomy framework. In this sense, the paper should
-be read as establishing a structural obstruction and a conditional
-compression principle, rather than as claiming a completed microscopic
-theory.
+realizing the finite framework. In this sense, the paper should be read
+as establishing a structural obstruction and a conditional compression
+principle, rather than as claiming a completed microscopic theory.
 
 The broader implication is that the baryogenesis problem is shifted from
 one of broad continuous arbitrariness to one of sharply delimited
@@ -2193,7 +2263,7 @@ The Lean~4 source code and numerical computations supporting the
 results are publicly available at
 \url{https://github.com/nuu/A5_BaryonAsymmetry}
 and permanently archived at Zenodo
-(\url{https://doi.org/10.5281/zenodo.18801089})
+(\url{https://doi.org/10.5281/zenodo.18958139})
 under the Apache License~2.0.
 
 \paragraph{Materials availability.}
@@ -2203,9 +2273,9 @@ Not applicable.
 The complete Lean~4 source code for the formal verification
 (sorry\,$=$\,0, axiom\,$=$\,0) and the theorem--identifier
 correspondence table are publicly available at
-\url{https://github.com/nuu/A5CosmicNecessity}
+\url{https://github.com/nuu/A5_BaryonAsymmetry}
 and permanently archived at Zenodo
-(\url{https://doi.org/10.5281/zenodo.18801089})
+(\url{https://doi.org/10.5281/zenodo.18958139})
 under the Apache License 2.0.
 The repository includes all files necessary to reproduce
 the verification: \texttt{lakefile.lean}, Mathlib dependency
